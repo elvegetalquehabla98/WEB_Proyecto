@@ -41,7 +41,6 @@
           <li><a href="./works.html" title="">02 : Proyectos</a></li>
           <li><a href="./about.html" title="">03 : Acerca de mi</a></li>
           <li><a href="./contact.html" title="">04 : Contacto</a></li>
-          <!--<li><a href="./components.html" title="">05 : Components</a></li>-->
         </ul>
 
 
@@ -49,49 +48,42 @@
     </div>
   </nav>
 </header>
-
+<!--INFORMACIÓN-->
 <div class="section-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="section-container-spacer text-center">
-            <h1 class="h2">01 : Acerca de mi</h1>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <h3>Formación</h3>
-                  <p>Estudio la carrera de Ingeniería de Minas y Metalurgia en la Facultad de Ingeniería de la Universidad Nacional Autónoma de México.
-                    Formo parte de la generación 44 del programa de pre-becarios del Programa de Tecnologías en Cómputo PROTECO.
-                  </p>
-                  <h3>Intereses y Hobbies</h3>
-                  <p>Entusiasta de la programación, actividades acuáticas como natación, natación en aguas abiertas, apnea y buceo. Prefiero la calistecnia y el entrenamiento funcional sobre el gym.</h3>
-                  <h3>Personalidad</h3>
-                  <p>
-                  Soy una persona activa, disfruto salir de casa, conocer personas de diferentes áreas y caminar por las calles de mi cuidad escuchándo música. Hablo demasiado y camino rápido. 
-                  </p>
-                  <h3>Gustos</h3>
-                  <p>
-                    Me gusta escuchar música electrónica, en especial House (en todas sus variantes), Dance, EDM y electro. También me encanta el Pop, Reggaeton, Corridos, Salsas y Cumbias.
-                  </p>
-                  <p>
-                    Msi comidas favoritas son pizza, enchiladas y milanesa. Me gusta tomar vino y cerveza, mi cerveza preferida es la Corona. Mi sabor de helado favorito es el de oreo. Disfruto de la comida picante y condimentada. 
-                  </p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <img src="./assets/images/Me.jpg" class="img-responsive" alt="">
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="section-container-spacer text-center">
+          <h1 class="h2">01 : Acerca de mí</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <h3 class="button" onclick="toggleContent('formacion')">Formación</h3>
+                <p id="formacion" class="content">Estudio la carrera de Ingeniería de Minas y Metalurgia en la Facultad de Ingeniería de la Universidad Nacional Autónoma de México. Formo parte de la generación 44 del programa de pre-becarios del Programa de Tecnologías en Cómputo PROTECO.</p>
+
+                <h3 class="button" onclick="toggleContent('intereses')">Intereses y Hobbies</h3>
+                <p id="intereses" class="content">Entusiasta de la programación, actividades acuáticas como natación, natación en aguas abiertas, apnea y buceo. Prefiero la calistenia y el entrenamiento funcional sobre el gimnasio.</p>
+
+                <h3 class="button" onclick="toggleContent('personalidad')">Personalidad</h3>
+                <p id="personalidad" class="content">Soy una persona activa, disfruto salir de casa, conocer personas de diferentes áreas y caminar por las calles de mi ciudad escuchando música. Hablo demasiado y camino rápido.</p>
+
+                <h3 class="button" onclick="toggleContent('gustos')">Gustos</h3>
+                <p id="gustos" class="content">Me gusta escuchar música electrónica, en especial House (en todas sus variantes), Dance, EDM y electro. También me encanta el Pop, Reggaeton, Corridos, Salsas y Cumbias.<br>Mis comidas favoritas son pizza, enchiladas y milanesa. Me gusta tomar vino y cerveza; mi cerveza preferida es la Corona. Mi sabor de helado favorito es el de Oreo. Disfruto de la comida picante y condimentada.</p>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <img src="./assets/images/Me.jpg" class="img-responsive" alt="">
               </div>
             </div>
           </div>
-          
-          
-       </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+</body>
 
 
 <footer class="footer-container text-center">
@@ -103,7 +95,27 @@
     </div>
   </div>
 </footer>
+<style>
+  .content {
+    display: none; /* Oculta el contenido por defecto */
+  }
 
+  .active {
+    display: block; /* Muestra el contenido cuando está activo */
+  }
+
+  .button {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+  }
+</style>
+<script>
+  function toggleContent(elementId) {
+    var content = document.getElementById(elementId);
+    content.classList.toggle("active"); // Cambia la clase para mostrar u ocultar el contenido
+  }
+</script>
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
      navActivePage();
